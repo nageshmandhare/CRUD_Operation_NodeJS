@@ -1,0 +1,116 @@
+<html ng-app="crudModule">
+    <head>
+        <title>CRUD Operations using AngularJS UI and RESTful service using Express on Node!</title>
+        <style>
+            
+            table#tblContainer
+            {
+                   width: 50%;
+            }
+        #tblContainer, #tblcollections, #tblCRUD, td 
+        {
+            border:3px solid maroon;
+            background-color: mintcream;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;          
+        }
+        th {
+            background-color:darkgray;
+        }
+ 
+        #dvcollection {
+            height: 300px;
+            overflow-y: scroll;
+        }
+        </style>
+    </head>
+    <body> 
+<h2 style="text-align:center;">CRUD Operations using AngularJS UI and RESTful service using Express on Node!</h2>
+ 
+    <table id="tblContainer" ng-controller="crudController">
+        <tbody><tr>
+            <td>
+                <table id="tblCRUD">
+                    <tbody>
+                      <tr>
+                        <td>
+                            <span>Name</span>
+                        </td>
+                        <td>
+                            <input type="text" id="name" required="true" ng-model="name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>ISBN</span>
+                        </td>
+                        <td>
+                            <input type="text" id="isbn" required="true" ng-model="isbn"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Author</span>
+                        </td>
+                        <td>
+                            <input type="text" id="author" required="" ng-model="author"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Pages</span>
+                        </td>
+                        <td>
+                            <input type="number" id="pages" required="" ng-model="pages"/>
+                        </td>
+ 
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="button" id="new" value="New" ng-click="clear()" />
+                            <input type="button" id="save" value="Save" ng-click="save()" />
+                            <input type="button" id="get" value="Get Book" ng-click="getBook()" />
+                            <input type="button" id="delete" value="Delete" ng-click="delete()" />   
+                        </td>
+                    </tr>
+                </tbody></table>
+                <div>{{Message}}</div>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <div id="dvcollection">
+                    <table id="tblcollections">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>ISBN</th>
+                                <th>Author</th>
+                                <th>Pages</th>                                
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="BOOK in Books">
+                            <tr ng-click="getBook(BOOK)">
+                                <td> <span>{{BOOK.name}}</span></td>
+                                <td> <span>{{BOOK.isbn}}</span></td>
+                                <td> <span>{{BOOK.author}}</span></td>
+                                <td> <span>{{BOOK.pages}}</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </tbody></table>
+ 
+ 
+ 
+<script src="./node_modules/angular/angular.min.js"></script>
+<script src="./app.js"></script>
+<script src="./service.js"></script>
+<script src="./controller.js"></script>
+    </body>
+</html>

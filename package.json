@@ -1,0 +1,16 @@
+{
+  "name": "angularapplnwithrest",
+  "version": "1.0.0",
+  "description": "Creating RESTfulService using Express, MongoDB on Node and Consuming it in an AngularJS Appln",
+  "main": "RESTfulService.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nagesh Mandhare",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.8"
+  }
+}
