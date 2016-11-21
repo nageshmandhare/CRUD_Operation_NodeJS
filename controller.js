@@ -1,8 +1,3 @@
-/// <reference path="./bower_components/angular/angular.min.js" />
-/// <reference path="./app.js" />
-
-//The controller is having 'crudService' dependency.
-//This controller makes call to methods from the service 
 app.controller('crudController', function ($scope, crudService) {
     
     $scope.IsNewRecord = 0; //1 for the flag for the new record

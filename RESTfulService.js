@@ -25,6 +25,7 @@ var bookSchema = mongoose.Schema({
   pages: Number
 });
 
+
 var Book = mongoose.model('Book',bookSchema);
 
 // connecting to Mongod instance
@@ -43,10 +44,6 @@ app.all('*',function(req,res,next){
   next();
 });
 
-// app.get('/',function(req,res){
-//    res.send('Hello World using express!');   
-// });
-
 // Get all the books
 app.get('/books',function(req,res){
     Book.find({},function(err,result){
@@ -64,7 +61,6 @@ app.get('/book/:isbn', function(req, res){
     res.json(result);
   });
 });
-
 
 //Add a new book
 app.post("/book", function(req, res){
@@ -85,6 +81,7 @@ app.post("/book", function(req, res){
     });
   });
 });
+
 
 //Update an existing book
 app.put("/book/:isbn", function(req, res){
